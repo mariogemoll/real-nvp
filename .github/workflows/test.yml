@@ -1,0 +1,16 @@
+name: RealNVP test
+on: [push]
+jobs:
+  default:
+    name: Run a basic test
+    runs-on: "ubuntu-latest"
+    defaults:
+      run:
+        shell: bash -el {0}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: conda-incubator/setup-miniconda@v3
+        with:
+          activate-environment: rnvp
+          environment-file: environment.yml
+      - run: python test.py
