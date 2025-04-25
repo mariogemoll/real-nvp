@@ -13,4 +13,10 @@ jobs:
         with:
           activate-environment: rnvp
           environment-file: environment.yml
-      - run: python test.py
+      - name: Run the test
+        run: |
+          cd ..
+          mv real-nvp real_nvp
+          mv real_nvp/test.py .
+          python test.py
+          mv real_nvp real-nvp

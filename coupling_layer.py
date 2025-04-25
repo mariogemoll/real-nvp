@@ -2,8 +2,8 @@ import torch
 import torch.nn as nn
 
 from enum import IntEnum
-from models.resnet import ResNet
-from util import checkerboard_mask
+from .resnet import ResNet
+from .util import checkerboard_mask
 
 
 class MaskType(IntEnum):

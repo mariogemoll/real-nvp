@@ -1,5 +1,8 @@
+# Please rename the repo directory to "real_nvp" and run this script in its parent directory.
+
 import torch
-from models import RealNVP, RealNVPLoss
+from real_nvp.real_nvp import RealNVP
+from real_nvp.real_nvp_loss import RealNVPLoss
 
 model = RealNVP(num_scales=2, in_channels=3, mid_channels=64, num_blocks=2)
 loss_fn = RealNVPLoss()
