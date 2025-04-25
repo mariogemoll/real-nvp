@@ -8,4 +8,11 @@ x = torch.rand(4, 3, 32, 32)
 z, sldj = model(x)
 loss = loss_fn(z, sldj)
 loss.backward()
-reversed, _ = model(z, reverse=True)
+
+model.eval()
+
+with torch.no_grad():
+    samples, _ = model(torch.randn((4, 3, 32, 32)), reverse=True)
+    samples = torch.sigmoid(samples)
+    samples_z, sldj = model(samples)
+
