@@ -1,6 +1,5 @@
 name: rnvp
 channels:
-  - defaults
   - pytorch
 dependencies:
   - numpy=2.2.4
